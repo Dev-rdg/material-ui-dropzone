@@ -1,0 +1,14 @@
+# Specify a non-default branch for pull requests for pip
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    # Raise pull requests for version updates
+    # to npm against the `staging` branch
+    target-branch: "dependabot"
+    # Labels on pull requests for version updates only
+    labels:
+      - "npm dependencies"
+    directory: "/"
+    schedule:
+      day: "monday"
+      interval: "weekly"
