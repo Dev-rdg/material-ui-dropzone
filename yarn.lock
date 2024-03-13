@@ -2376,15 +2376,6 @@ clipboard-copy@^3.1.0:
   resolved "https://registry.npmjs.org/clipboard-copy/-/clipboard-copy-3.1.0.tgz"
   integrity sha512-Xsu1NddBXB89IUauda5BIq3Zq73UWkjkaQlPQbLNvNsd5WBMnTWPNKYR6HGaySOxGYZ+BKxP2E9X4ElnI3yiPA==
 
-clipboard@^2.0.0:
-  version "2.0.6"
-  resolved "https://registry.npmjs.org/clipboard/-/clipboard-2.0.6.tgz"
-  integrity sha512-g5zbiixBRk/wyKakSwCKd7vQXDjFnAMGHoEyBogG/bw9kTD9GvdAvaoRR1ALcEzt3pVKxZR0pViekPMIS0QyGg==
-  dependencies:
-    good-listener "^1.2.2"
-    select "^1.1.2"
-    tiny-emitter "^2.0.0"
-
 cliui@^4.0.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/cliui/-/cliui-4.1.0.tgz"
@@ -2841,11 +2832,6 @@ del@^4.1.1:
     p-map "^2.0.0"
     pify "^4.0.1"
     rimraf "^2.6.3"
-
-delegate@^3.1.2:
-  version "3.2.0"
-  resolved "https://registry.npmjs.org/delegate/-/delegate-3.2.0.tgz"
-  integrity sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
 
 depd@~1.1.2:
   version "1.1.2"
@@ -3874,13 +3860,6 @@ glogg@^1.0.2:
   dependencies:
     sparkles "^1.0.0"
 
-good-listener@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/good-listener/-/good-listener-1.2.2.tgz"
-  integrity sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
-  dependencies:
-    delegate "^3.1.2"
-
 graceful-fs@4.1.11, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.11.tgz"
@@ -4248,9 +4227,9 @@ ip-regex@^2.1.0:
   integrity sha1-+ni/XS5pE8kRzp+BnuUUa7bYROk=
 
 ip@^1.1.0, ip@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/ip/-/ip-1.1.5.tgz"
-  integrity sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.9.tgz#8dfbcc99a754d07f425310b86a99546b1151e396"
+  integrity sha512-cyRxvOEpNHNtchU3Ln9KC/auJgup87llfQpQ+t5ghoC/UhL16SWzbueiCsdTnWmqAWl7LadfuwhlqmtOaqMHdQ==
 
 ipaddr.js@1.9.1, ipaddr.js@^1.9.0:
   version "1.9.1"
@@ -5740,9 +5719,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/path-parse/-/path-parse-1.0.6.tgz"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -5850,11 +5829,9 @@ pretty-format@^25.1.0:
     react-is "^16.12.0"
 
 prismjs@^1.17.1:
-  version "1.21.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.21.0.tgz"
-  integrity sha512-uGdSIu1nk3kej2iZsLyDoJ7e9bnPzIgY0naW/HdknGj61zScaprVEVGHrPoXqI+M9sP0NDnTK2jpkvmldpuqDw==
-  optionalDependencies:
-    clipboard "^2.0.0"
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 private@^0.1.8:
   version "0.1.8"
@@ -6642,11 +6619,6 @@ select-hose@^2.0.0:
   resolved "https://registry.npmjs.org/select-hose/-/select-hose-2.0.0.tgz"
   integrity sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
 
-select@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/select/-/select-1.1.2.tgz"
-  integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
-
 selfsigned@^1.10.7:
   version "1.10.7"
   resolved "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.7.tgz"
@@ -7281,11 +7253,6 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tiny-emitter@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-2.1.0.tgz"
-  integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
-
 tiny-warning@^1.0.2:
   version "1.0.3"
   resolved "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
@@ -7854,9 +7821,9 @@ write@1.0.3:
     mkdirp "^0.5.1"
 
 ws@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.npmjs.org/ws/-/ws-6.2.1.tgz"
-  integrity sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.2.tgz#dd5cdbd57a9979916097652d78f1cc5faea0c32e"
+  integrity sha512-zmhltoSR8u1cnDsD43TX59mzoMZsLKqUweyYBAIvTngR3shc0W6aOZylZmq/7hqyVxPdi+5Ud2QInblgyE72fw==
   dependencies:
     async-limiter "~1.0.0"
 
