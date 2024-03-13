@@ -1,6 +1,5 @@
 import Snackbar from '@mui/material/Snackbar';
 import Typography from '@mui/material/Typography';
-import {withStyles} from '@mui/styles';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import clsx from 'clsx';
@@ -11,6 +10,7 @@ import Dropzone from 'react-dropzone';
 import {convertBytesToMbsOrKbs, isImage, readFile} from '../helpers';
 import PreviewList from './PreviewList';
 import SnackbarContentWrapper from './SnackbarContentWrapper';
+import {styled} from '@mui/material';
 
 const styles = ({palette, shape, spacing}) => ({
     '@keyframes progress': {
@@ -531,4 +531,4 @@ DropzoneAreaBase.propTypes = {
     onAlert: PropTypes.func,
 };
 
-export default withStyles(styles, {name: 'MuiDropzoneArea'})(DropzoneAreaBase);
+export default styled(DropzoneAreaBase)(styles);

@@ -2,11 +2,11 @@ import Chip from '@mui/material/Chip';
 import Fab from '@mui/material/Fab';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import {withStyles} from '@mui/styles';
 import DeleteIcon from '@mui/icons-material/Delete';
 import clsx from 'clsx';
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import {styled} from '@mui/material';
 
 const styles = ({palette, shape, spacing}) => ({
     root: {},
@@ -138,4 +138,4 @@ PreviewList.propTypes = {
     useChipsForPreview: PropTypes.bool,
 };
 
-export default withStyles(styles, {name: 'MuiDropzonePreviewList'})(PreviewList);
+export default styled(PreviewList)(styles);
