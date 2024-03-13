@@ -1,14 +1,13 @@
 import IconButton from '@mui/material/IconButton';
 import SnackbarContent from '@mui/material/SnackbarContent';
-import {withStyles} from '@mui/styles';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import ErrorIcon from '@mui/icons-material/Error';
 import InfoIcon from '@mui/icons-material/Info';
 import WarningIcon from '@mui/icons-material/Warning';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import * as React from 'react';
+import {styled} from "@mui/material";
 
 const variantIcon = {
     success: CheckCircleIcon,
@@ -74,12 +73,5 @@ function SnackbarContentWrapper(props) {
     );
 }
 
-SnackbarContentWrapper.propTypes = {
-    classes: PropTypes.object.isRequired,
-    className: PropTypes.string,
-    message: PropTypes.node,
-    onClose: PropTypes.func,
-    variant: PropTypes.oneOf(['success', 'warning', 'error', 'info']).isRequired,
-};
 
-export default withStyles(styles, {name: 'MuiDropzoneSnackbar'})(SnackbarContentWrapper);
+export default styled(SnackbarContentWrapper)(styles);

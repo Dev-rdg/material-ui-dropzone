@@ -5,9 +5,8 @@
     "mocha": true,
     "node": true
   },
-  "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 7,
+    "ecmaVersion": 2023,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
@@ -19,11 +18,10 @@
   },
   "settings": {
     "react": {
-      "version": "15.0"
+      "version": "detect"
     }
   },
   "plugins": [
-    "babel",
     "react"
   ],
   "extends": [

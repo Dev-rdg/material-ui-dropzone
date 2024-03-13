@@ -1,19 +1,22 @@
-import PropTypes from 'prop-types';
 import * as React from 'react';
 
 import {createFileFromUrl, readFile} from '../helpers';
 
-import DropzoneDialogBase from './DropzoneDialogBase';
+import DropzoneAreaBase from './DropzoneAreaBase';
 
+const splitDropzoneAreaProps = (props) => {
+    const {clearOnUnmount, initialFiles, onChange, onDelete, ...dropzoneAreaProps} = props;
+    return [{clearOnUnmount, initialFiles, onChange, onDelete}, dropzoneAreaProps];
+};
 
 /**
- * This component provides an uncontrolled version of the DropzoneDialogBase component.
+ * This components creates an uncontrolled Material-UI Dropzone, with previews and snackbar notifications.
  *
- * It supports all the Props and Methods from `DropzoneDialogBase` but keeps the files state internally.
+ * It supports all props of `DropzoneAreaBase` but keeps the files state internally.
  *
- * **Note** The `onSave` handler also returns `File[]` with all the accepted files.
+ * **Note** To listen to file changes use `onChange` event handler and notice that `onDelete` returns a `File` instance instead of `FileObject`.
  */
-class DropzoneDialog extends React.PureComponent {
+class DropzoneArea extends React.PureComponent {
     state = {
         fileObjects: [],
     }
@@ -106,7 +109,7 @@ class DropzoneDialog extends React.PureComponent {
 
         // Notify removed file
         if (onDelete) {
-            onDelete(removedFileObj.file);
+            onDelete(removedFileObj.file, removedFileObjIdx);
         }
 
         // Update local state
@@ -115,79 +118,25 @@ class DropzoneDialog extends React.PureComponent {
         }, this.notifyFileChange);
     }
 
-    handleClose = (evt) => {
-        const {clearOnUnmount, onClose} = this.props;
-
-        if (onClose) {
-            onClose(evt);
-        }
-
-        if (clearOnUnmount) {
-            this.setState({
-                fileObjects: [],
-            }, this.notifyFileChange);
-        }
-    }
-
-    handleSave = (evt) => {
-        const {clearOnUnmount, onSave} = this.props;
-        const {fileObjects} = this.state;
-
-        if (onSave) {
-            onSave(fileObjects.map((fileObject) => fileObject.file), evt);
-        }
-
-        if (clearOnUnmount) {
-            this.setState({
-                fileObjects: [],
-            }, this.notifyFileChange);
-        }
-    }
-
     render() {
+        const [, dropzoneAreaProps] = splitDropzoneAreaProps(this.props);
         const {fileObjects} = this.state;
 
         return (
-            <DropzoneDialogBase
-                {...this.props}
+            <DropzoneAreaBase
+                {...dropzoneAreaProps}
                 fileObjects={fileObjects}
                 onAdd={this.addFiles}
                 onDelete={this.deleteFile}
-                onClose={this.handleClose}
-                onSave={this.handleSave}
             />
         );
     }
 }
 
-DropzoneDialog.defaultProps = {
+DropzoneArea.defaultProps = {
     clearOnUnmount: true,
     filesLimit: 3,
     initialFiles: [],
 };
 
-DropzoneDialog.propTypes = {
-    ...DropzoneDialogBase.propTypes,
-    /** Clear uploaded files when component is unmounted. */
-    clearOnUnmount: PropTypes.bool,
-    /** Maximum number of files that can be loaded into the dropzone. */
-    filesLimit: PropTypes.number,
-    /** List containing File objects or URL strings.<br/>
-     * **Note:** Please take care of CORS.
-    */
-    initialFiles: PropTypes.arrayOf(
-        PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.any,
-        ])
-    ),
-    /**
-     * Fired when the user clicks the Submit button.
-     *
-     * @param {File[]} files All the files currently inside the Dropzone.
-     * @param {SyntheticEvent} event The react `SyntheticEvent`.
-     */
-    onSave: PropTypes.func,
-};
-
-export default DropzoneDialog;
+export default DropzoneArea;
